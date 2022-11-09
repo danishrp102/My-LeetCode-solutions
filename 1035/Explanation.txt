@@ -11,9 +11,14 @@ Longest Common Subsequence: https://leetcode.com/problems/longest-common-subsequ
 Brute force approach:
 
 TC: Runs in exponential time since we are checking each and every possibility.
-SC: O(n) for the call stack.\
+SC: O(m + n) for the call stack.
 
 1) Top-down DP (Recursion + Memoization): 
 
+TC: Runs in O(m * n)
+SC: O(m * n) for the extra 2D array space
 
 2) Bottom-up DP (Tabulation):
+
+TC: Runs in O(m * n)
+SC: O(m * n) for the extra 2D array space
