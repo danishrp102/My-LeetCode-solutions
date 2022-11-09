@@ -1,0 +1,2 @@
+To solve the problem we first compute and store the count of the number of occurences of each character in the given string.
+This is done because for a palindrome to exist, the same characters must be placed at equal distanced from the midpoint of the string. We can place at max 1 character in the middle of the string (which has not been utilized yet).
