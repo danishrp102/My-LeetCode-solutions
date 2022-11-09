@@ -1,0 +1,5 @@
+The largest palindromic number can be obtained when the digits are sorted in non-increasing order for the first half and the reverse of the first half of the string is appended to the later half after the largest digit that occurs after the first string is formed is appended to the first half.
+
+Corner case: There cannot be a string composed of only zeroes. If such a case occurs we return a singular occurence of '0'
+
+Datastructures used: stack, vector, strings
