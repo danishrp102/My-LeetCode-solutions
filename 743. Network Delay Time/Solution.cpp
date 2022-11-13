@@ -1,3 +1,5 @@
+// Problem link- https://leetcode.com/problems/network-delay-time/description/
+
 // at first I tried to solve this problem using topological sort. The idea was if we find out that the top of the stack after the topological sort is not equal to k(the given source), then we return -1
 // But this solution fails in cases where the given graph is not a DAG (eg: times = [[1,2,1],[2,1,3]])
 // So I applied the Dijkstra's algorithm for directed graphs and formed the solution
