@@ -1,9 +1,9 @@
 // Problem link: https://leetcode.com/problems/house-robber-ii/description/
 
-The main difference between this problem and its predecessor is that in this version the first and the last houses are also neighbours
-We can use the same code for the previous variant by modifying this problem by categorizing it into 2 cases:
-Case 1) The last house is robbed, meaning the robber cannot rob the first house
-Case 2) The last house is not robbed, meaning the robber is free to rob the first house
+// The main difference between this problem and its predecessor is that in this version the first and the last houses are also neighbours
+//We can use the same code for the previous variant by modifying this problem by categorizing it into 2 cases:
+//Case 1) The last house is robbed, meaning the robber cannot rob the first house
+//Case 2) The last house is not robbed, meaning the robber is free to rob the first house
 
 class Solution {
 public:
