@@ -23,6 +23,6 @@ public:
             prev = val;
         }
 
-        return ans + 1;
+        return ans + 1; // for the number 'n' itself
     }
 };
