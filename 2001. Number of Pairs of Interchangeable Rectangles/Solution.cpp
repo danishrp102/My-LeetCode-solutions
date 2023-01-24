@@ -1,3 +1,5 @@
+// Problem link: https://leetcode.com/problems/number-of-pairs-of-interchangeable-rectangles/description/
+
 class Solution {
 public:
     long long interchangeableRectangles(vector<vector<int>>& rectangles) {
