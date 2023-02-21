@@ -3,56 +3,27 @@
 class Solution {
 public:
     int totalFruit(vector<int>& fruits) {
-        int maxi = INT_MIN;
-        int k1 = -1, k2 = -1, i = 0;
-        int n = fruits.size();
+        int n = fruits.size(), i = 0, j = 0, maxi = 0;
+        unordered_map <int, int> mp;
 
-        unordered_map <int, int> mp, pos;
+        while(j < n) {
+            mp[fruits[j]]++;
 
-        while(i < n) {
-
-            if(k1 == -1)
-                k1 = fruits[i], mp[k1]++, pos[k1] = i;
-
-            else if(k2 == -1) {
-
-                if(k1 != fruits[i])
-                    k2 = fruits[i], mp[k2]++, pos[k2] = i;
-                else
-                    mp[k1]++, pos[k1] = i;
+            if(mp.size() <= 2) {
+                maxi = max(maxi, j - i + 1);
+                j++;
             }
 
-            else {
-
-                if(k1 == fruits[i])
-                    mp[k1]++, pos[k1] = i;
-
-                else if(k2 == fruits[i])
-                    mp[k2]++, pos[k2] = i;
-
-                else {
-
-                    if(fruits[i - 1] == k1) {
-                        mp.erase(k2);
-                        mp[k1] = (i - 1) - pos[k2];
-                        k2 = fruits[i];
-                        mp[k2]++;
-                        pos[k2] = i;
-                    }
-
-                    else if(fruits[i - 1] == k2) {
-                        mp.erase(k1);
-                        mp[k2] = (i - 1) - pos[k1];
-                        k1 = fruits[i];
-                        mp[k1]++;
-                        pos[k1] = i;
-                    }
-
+            else if(mp.size() > 2) {
+                while(mp.size() > 2) {
+                    mp[fruits[i]]--;
+                    if(mp[fruits[i]] == 0)
+                        mp.erase(fruits[i]);
+                    i++;
                 }
-            }
 
-            maxi = max(maxi, mp[k1] + mp[k2]);
-            i++;
+                j++;
+            }
         }
 
         return maxi;
