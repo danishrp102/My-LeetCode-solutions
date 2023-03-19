@@ -15,8 +15,6 @@ public:
         while(i < n) {
             if(mp.size() == k)
                 ans = max(ans, sum);
-
-            cout << mp.size() << "\n";
             
             mp[nums[j]]--;
             mp[nums[i]]++;
