@@ -21,12 +21,10 @@ public:
             q.pop();
 
             for(auto [x, y]: adj[node]) {
+                ans = min(ans, y);
                 if(!vis[x]) {
                     q.push(x);
                     vis[x] = true;
-
-                    for(auto [m, n]: adj[x])
-                        ans = min(ans, n);
                 }
             }
         }
