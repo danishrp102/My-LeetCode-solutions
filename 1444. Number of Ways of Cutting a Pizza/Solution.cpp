@@ -7,12 +7,8 @@ public:
 
     int solve(vector <vector <int> > &pref, int cnt, int i, int j, int m, int n, vector <vector <vector <int> > > &dp) {
 
-        if(cnt == 0) {
-            if(pref[m][n] - pref[i - 1][n] - pref[m][j - 1] + pref[i - 1][j - 1] > 0)
-                return 1;
-            else
-                return 0;
-        }
+        if(cnt == 0)
+            return (pref[m][n] - pref[i - 1][n] - pref[m][j - 1] + pref[i - 1][j - 1] > 0);
 
         if(dp[i][j][cnt] != -1)
             return dp[i][j][cnt];
