@@ -1,2 +1,2 @@
 ## My-LeetCode-solutions
-Hello there! Here I will be posting my solutions to various LeetCode problems.
+Hello there! I will be posting my solutions here to various LeetCode problems.
