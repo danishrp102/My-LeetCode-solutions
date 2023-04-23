@@ -1,5 +1,7 @@
 // Problem link: https://leetcode.com/problems/restore-the-array/description/
 
+// Memoization: 
+
 class Solution {
 private:
 
@@ -36,5 +38,39 @@ public:
         int n = s.size();
         vector <int> dp(n + 1, -1);
         return solve(s, 0, n, k, dp);
+    }
+};
+
+// Tabulation: 
+
+class Solution {
+private:
+    const int mod = 1e9 + 7;
+
+public:
+    int numberOfArrays(string s, int k) {
+        int n = s.size();
+        vector <int> dp(n + 1, 0);
+
+        dp[n] = 1;
+
+        for(int i = n; i >= 1; i--) {
+            long num = 0;
+            int ans = 0;
+
+            for(int j = i; j <= n; j++) {
+                num *= 10;
+                num += s[j - 1] - '0';
+
+                if(num == 0 || num > k)
+                    break;
+                
+                ans = (ans + dp[j]) % mod;
+            }
+
+            dp[i - 1] = ans;
+        }
+
+        return dp[0];
     }
 };
